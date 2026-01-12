@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>A basic HTML table</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Họ và tên</th>
+    <th>Mã sinh viên</th>
+    <th>PTPMQL NHÓM</th>
+  </tr>
+  <tr>
+    <td>Nguyễn Văn A</td>
+    <td>57295052</td>
+    <td>Nhóm 01</td>
+  </tr>
+  <tr>
+    <td>Nguyễn Thị B</td>
+    <td>74294592</td>
+    <td>Nhóm 02 </td>
+  </tr>
+</table>
+
+
+
+</body>
+</html>

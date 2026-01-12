@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Meaningful Page Title</title>
+</head>
+<body>
+
+<p>Nội dung của phần tử body được hiển thị trong cửa sổ trình duyệt.</p>
+<p>Nội dung của phần tử title được hiển thị trong tab trình duyệt, trong mục yêu thích và trong kết quả tìm kiếm của công cụ tìm kiếm.</p>
+
+</body>
+</html>

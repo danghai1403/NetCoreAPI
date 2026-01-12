@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Nguyễn Đăng Hải - 2121051554</h2>
+<p>The <strong>input type="text"</strong> defines a one-line text input field:</p>
+
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<p>Điền các nội dung và ấn submit.</p>
+<p>Tối đa 20 ký tự.</p>
+
+</body>
+</html>

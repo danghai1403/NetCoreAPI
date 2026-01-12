@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Nguyễn Đăng Hải</h1>
+<h2>2121051554-PTPMQL-NHÓM 02</h2>
+<p>Điền nội dung và ấn submit</p>
+
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

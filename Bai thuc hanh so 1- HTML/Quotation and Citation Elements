@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Here is a quote from Github website:</p>
+
+<blockquote cite="https://github.com/danghai1403/NetCoreAPI.git">
+Trong đây bao gồm code và phần làm bài thực hành.
+</blockquote>
+
+</body>
+</html>

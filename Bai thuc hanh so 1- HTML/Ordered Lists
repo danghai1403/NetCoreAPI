@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>An ordered HTML list</h2>
+
+<ol>
+  <li>Cà phê</li>
+  <li>Trà</li>
+  <li>Sữa</li>
+</ol>  
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  font-size: 20px;
+}
+</style>
+<body>
+
+<span style='font-size:100px;'>&#272;</span>
+<p>I will display &#272;</p>
+<p>I will display &#x110;</p>
+
+</body>
+</html>

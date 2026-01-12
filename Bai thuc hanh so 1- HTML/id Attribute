@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+} 
+</style>
+</head>
+<body>
+
+<h2>Nguyễn Đăng Hải</h2>
+<p>Mã sinh viên : 2121051554"ptpmql":</p>
+
+<h1 id="ptpmql">Ptpmql-Nhóm 02</h1>
+
+</body>
+</html>

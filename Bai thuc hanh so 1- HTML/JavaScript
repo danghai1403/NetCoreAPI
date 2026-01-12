@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Họ và tên : Nguyễn Đăng Hải</h2>
+<p>Mã sinh viên : 2121051554-PTPMQL-Nhóm 02</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+</script> 
+
+</body>
+</html>

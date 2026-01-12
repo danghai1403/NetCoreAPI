@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Nguyễn Đăng Hải - 2121051554 - PTPMQL - Nhóm 02</h1>
+
+<p>Thuộc tính form xác định mẫu form mà một phần tử nhập liệu thuộc về.</p>
+
+<form action="/action_page.php" id="form1">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<p>Trường "Họ" bên dưới nằm ngoài phần tử form, nhưng vẫn là một phần của form.</p>
+
+<label for="lname">Last name:</label>
+<input type="text" id="lname" name="lname" form="form1">
+
+</body>
+</html>
