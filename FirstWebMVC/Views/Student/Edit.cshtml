@@ -1,0 +1,28 @@
+@model FirstWebMVC.Models.Student
+
+<h2>Sửa sinh viên</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Họ tên</label>
+        <input asp-for="FullName" />
+    </div>
+
+    <div>
+        <label>Mã sinh viên</label>
+        <input asp-for="StudentCode" />
+    </div>
+
+    <div>
+        <label>Tuổi</label>
+        <input asp-for="Age" />
+    </div>
+
+    <br />
+
+    <button type="submit">Cập nhật</button>
+
+</form>
