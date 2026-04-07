@@ -2,25 +2,24 @@
 
 <h2>Thêm sinh viên</h2>
 
-<form asp-action="Create" method="post">
+<form asp-action="Create">
 
     <div>
-        <label>Họ tên</label>
+        <label asp-for="FullName"></label>
         <input asp-for="FullName" />
+        <span asp-validation-for="FullName" style="color:red"></span>
     </div>
 
     <div>
-        <label>Mã sinh viên</label>
+        <label asp-for="StudentCode"></label>
         <input asp-for="StudentCode" />
+        <span asp-validation-for="StudentCode" style="color:red"></span>
     </div>
 
-    <div>
-        <label>Tuổi</label>
-        <input asp-for="Age" />
-    </div>
-
-    <br />
-
-    <button type="submit">Lưu</button>
+    <button type="submit">Create</button>
 
 </form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

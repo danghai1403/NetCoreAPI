@@ -8,7 +8,8 @@
 <tr>
     <th>ID</th>
     <th>FullName</th>
-    <th>Action</th> <!-- thêm cột -->
+    <th>StudentCode</th>
+    <th>Action</th>
 </tr>
 
 @foreach (var item in Model)
@@ -16,8 +17,10 @@
 <tr>
     <td>@item.Id</td>
     <td>@item.FullName</td>
+    <td>@item.StudentCode</td>
 
     <td>
+        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
     </td>
 </tr>
