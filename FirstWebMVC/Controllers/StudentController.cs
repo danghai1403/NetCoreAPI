@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using FirstWebMVC.Data;
-using FirstWebMVC.Models;
+using FirstWebMVC.Models.Entities;;
 using System.Linq;
 
 namespace FirstWebMVC.Controllers

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Net_Core_API\\FirstWebMvc\\FirstWebMVC.csproj": {}
+    "D:\\Net_Core_API\\FirstWebMVC\\FirstWebMVC.csproj": {}
   },
   "projects": {
-    "D:\\Net_Core_API\\FirstWebMvc\\FirstWebMVC.csproj": {
+    "D:\\Net_Core_API\\FirstWebMVC\\FirstWebMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Net_Core_API\\FirstWebMvc\\FirstWebMVC.csproj",
+        "projectUniqueName": "D:\\Net_Core_API\\FirstWebMVC\\FirstWebMVC.csproj",
         "projectName": "FirstWebMVC",
-        "projectPath": "D:\\Net_Core_API\\FirstWebMvc\\FirstWebMVC.csproj",
+        "projectPath": "D:\\Net_Core_API\\FirstWebMVC\\FirstWebMVC.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Net_Core_API\\FirstWebMvc\\obj\\",
+        "outputPath": "D:\\Net_Core_API\\FirstWebMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config"
