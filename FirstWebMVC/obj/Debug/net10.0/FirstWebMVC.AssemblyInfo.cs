@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FirstWebMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b3b100a4ebb4ceea6d5fd0c5547d28a95231315")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bd31cb30cdf373b65dad8f88d09b364a4da2bb9")]
 [assembly: System.Reflection.AssemblyProductAttribute("FirstWebMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FirstWebMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

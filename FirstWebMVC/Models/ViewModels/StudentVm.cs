@@ -1,9 +1,12 @@
-namespace DemoMVC.Models.ViewModels
+namespace FirstWebMVC.Models.ViewModels
 {
-    public class StudentVM
+    public class StudentFacultyViewModel
     {
-        public string StudentCode { get; set; } = default!;
-        public string FullName { get; set; } = default!;
-        public string FacultyName { get; set; } = default!;
+        public int Id { get; set; }
+        public string StudentCode { get; set; }
+        public string FullName { get; set; }
+
+        public int FacultyId { get; set; }   // khóa ngoại
+        public string FacultyName { get; set; } // hiển thị
     }
 }

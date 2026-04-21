@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using FirstWebMVC.Models.Entities;
-
+using FirstWebMVC.Models;
 namespace FirstWebMVC.Data
 {
     public class ApplicationDbContext : DbContext

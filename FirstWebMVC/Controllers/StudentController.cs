@@ -1,7 +1,13 @@
-using Microsoft.AspNetCore.Mvc;
-using FirstWebMVC.Data;
-using FirstWebMVC.Models.Entities;;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using FirstWebMVC.Data;
+using FirstWebMVC.Models.Entities;
+using FirstWebMVC.Models.ViewModels;
 
 namespace FirstWebMVC.Controllers
 {
@@ -14,50 +20,155 @@ namespace FirstWebMVC.Controllers
             _context = context;
         }
 
-        // Hiển thị danh sách sinh viên
-        public IActionResult Index()
+        // GET: Student
+        public async Task<IActionResult> Index()
         {
-            var students = _context.Students.ToList();
-            return View(students);
+            var result = await _context.Students
+                            .Select(s => new StudentFacultyViewModel
+                            {
+                                StudentCode = s.StudentCode,
+                                FullName = s.FullName,
+                                FacultyName = s.Faculty!.FacultyName
+                            })
+                            .ToListAsync();
+            return View(result);
         }
 
-        // Form thêm sinh viên
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // Lưu dữ liệu
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(Student student)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Students.Add(student);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(student);
-        }
-
-        // Xem chi tiết sinh viên
-        public IActionResult Details(int? id)
+        // GET: Student/Details/5
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
-                return View("NotFound");
+                return NotFound();
             }
 
-            var student = _context.Students.FirstOrDefault(s => s.Id == id);
-
+            var student = await _context.Students
+                .FirstOrDefaultAsync(m => m.StudentCode == id);
             if (student == null)
             {
-                return View("NotFound");
+                return NotFound();
             }
 
             return View(student);
+        }
+
+        // GET: Student/Create
+        public IActionResult Create()
+        {
+            ViewData["FacultyId"] = new SelectList(_context.Faculties, "FacultyId", "FacultyName");
+            return View();
+        }
+
+        // POST: Student/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("StudentCode,FullName,FacultyId")] Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                if (StudentExists(student.StudentCode))
+                {
+                    ModelState.AddModelError("StudentCode", "Ma sinh vien da ton tai");
+                    return View(student);
+                }
+                _context.Add(student);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["FacultyId"] = new SelectList(_context.Faculties, "FacultyId", "FacultyName", student.FacultyId);
+            return View(student);
+        }
+
+        // GET: Student/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+var student = await _context.Students.FindAsync(id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            ViewData["FacultyId"] = new SelectList(_context.Faculties, "FacultyId", "FacultyName", student.FacultyId);
+            return View(student);
+        }
+
+        // POST: Student/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("StudentCode,FullName,FacultyId")] Student student)
+        {
+            if (id != student.StudentCode)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(student);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!StudentExists(student.StudentCode))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["FacultyId"] = new SelectList(_context.Faculties, "FacultyId", "FacultyName", student.FacultyId);
+            return View(student);
+        }
+
+        // GET: Student/Delete/5
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var student = await _context.Students
+                .FirstOrDefaultAsync(m => m.StudentCode == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            return View(student);
+        }
+
+        // POST: Student/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var student = await _context.Students.FindAsync(id);
+            if (student != null)
+            {
+                _context.Students.Remove(student);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool StudentExists(string id)
+        {
+            return _context.Students.Any(e => e.StudentCode == id);
         }
     }
 }
