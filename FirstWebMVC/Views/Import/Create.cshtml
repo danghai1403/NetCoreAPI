@@ -1,0 +1,51 @@
+@model FirstWebMVC.Models.ViewModels.ImportVM
+<h2>Tạo phiếu nhập</h2>
+
+<form asp-action="Create"> <!-- submit về ImportController.Create POST -->
+
+<table id="table" border="1">
+    <tr>
+        <th>Thiết bị</th>
+        <th>Số lượng</th>
+        <th>Đơn giá</th>
+    </tr>
+</table>
+
+<button type="button" onclick="addRow()">Thêm dòng</button>
+<!-- thêm dòng thiết bị -->
+
+<button type="submit">Lưu phiếu</button>
+
+</form>
+
+<script>
+let index = 0; // biến đếm để bind đúng Items[0], Items[1]
+
+function addRow()
+{
+    let row = `
+    <tr>
+        <td>
+            <select name="Items[${index}].DeviceId">
+                @foreach(var d in ViewBag.Devices)
+                {
+                    <option value="@d.Id">@d.Name</option>
+                }
+            </select>
+        </td>
+
+        <td>
+            <input name="Items[${index}].Quantity" />
+        </td>
+
+        <td>
+            <input name="Items[${index}].Price" />
+        </td>
+    </tr>
+    `;
+
+    document.getElementById("table").innerHTML += row;
+
+    index++; // tăng index để không bị trùng
+}
+</script>
